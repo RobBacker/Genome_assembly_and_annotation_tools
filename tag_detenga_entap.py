@@ -6,6 +6,29 @@ from pathlib import Path
 from Bio import SeqIO
 import re
 
+"""
+Integrates EnTAP and DeTEnGA results into a structural annotation (GFF3) and optional FASTAs.
+Adds TE classification and functional annotations (PFAM, IPR, EggNOG, UniProt) into GFF3 `Note` 
+and `Dbxref` fields, and into FASTA headers.
+
+Usage:
+    python annotate_gff_entap_detenga.py \
+        --entap annotated.tsv \
+        --detenga TE_summary.csv \
+        --gff annotation.gff3 \
+        cds.fa proteins.fa ...
+
+Inputs:
+    --entap     EnTAP annotation table (annotated.tsv)
+    --detenga   DeTEnGA TE summary file (*.csv, semicolon-delimited)
+    --gff       Structural annotation (GFF3)
+    fastas      (optional) one or more FASTA files to annotate
+
+Outputs:
+    - Annotated GFF3 (suffix: .annotated.gff3)
+    - Annotated FASTA(s) (suffix: .annotated.fa)
+"""
+
 # === Annotation header block ===
 ANNOTATION_HEADER_BLOCK = """
 # Annotation keys used in Note= field:
@@ -203,3 +226,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
