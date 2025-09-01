@@ -34,13 +34,13 @@ CATEGORIES_ORTHO = ['Core', 'Soft-core', 'Shell', 'Cloud']
 COLORS = ['#2ca02c', '#ff7f0e', '#1f77b4', '#8F00FF', '#A9A9A9']
 
 def categorize_orthogroup(count, num_species):
-    if count == num_species:
+    if count == num_species:              # 15/15
         return 'Core'
-    elif count == num_species - 1:
+    elif count >= 13:                      # 13–14/15
         return 'Soft-core'
-    elif 2 <= count <= num_species - 2:
+    elif 3 <= count <= 12:                 # 3–12/15
         return 'Shell'
-    else:
+    else:                                  # 1–2/15
         return 'Cloud'
 
 def create_pav_table(counts_df, output_path, omit_set=None):
@@ -437,4 +437,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
