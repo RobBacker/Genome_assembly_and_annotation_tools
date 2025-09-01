@@ -245,6 +245,11 @@ def plot_stacked(mat, title, analysis_type, save_path=None, categories=None):
     if save_path:
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
         print(f"Saved figure to {save_path}")
+        base, _ = os.path.splitext(save_path)
+        svg_path = base + ".svg"
+        plt.savefig(svg_path, format='svg', bbox_inches='tight')
+        print(f"Saved figure to {svg_path}")
+
     plt.close(fig)
 
 def prompt_omit_assemblies(species_list):
@@ -432,3 +437,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
