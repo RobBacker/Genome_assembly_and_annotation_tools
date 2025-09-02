@@ -34,13 +34,14 @@ CATEGORIES_ORTHO = ['Core', 'Soft-core', 'Shell', 'Cloud']
 COLORS = ['#2ca02c', '#ff7f0e', '#1f77b4', '#8F00FF', '#A9A9A9']
 
 def categorize_orthogroup(count, num_species):
-    if count == num_species:              # 15/15
+    proportion = count / num_species
+    if proportion >= 0.95:   # Present in ≥95% of species
         return 'Core'
-    elif count >= 13:                      # 13–14/15
+    elif proportion >= 0.85: # Present in 85%-95% of species
         return 'Soft-core'
-    elif 3 <= count <= 12:                 # 3–12/15
+    elif proportion >= 0.20: # Present in 20%-70% of species
         return 'Shell'
-    else:                                  # 1–2/15
+    else:                   # Present in <20% of species
         return 'Cloud'
 
 def create_pav_table(counts_df, output_path, omit_set=None):
@@ -437,5 +438,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
