@@ -14,6 +14,8 @@ Usage:
 
 Filters gene models by repeat overlap, using AED for rescue, with correct CDS merging
 and de-duplicated repeat overlap calculations.
+
+Author: Robert Backer
 """
 import argparse
 from collections import defaultdict
@@ -223,3 +225,4 @@ if __name__ == '__main__':
         f"Kept {sum(1 for m in stats.values() if m['keep'])} genes; "
         f"dropped {sum(1 for m in stats.values() if not m['keep'])} genes\n"
     )
+
