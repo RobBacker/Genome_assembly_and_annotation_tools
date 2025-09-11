@@ -15,6 +15,7 @@ Usage:
         --input_dir path/to/search/_for_gff3_files \
         --output_dir results/ \
         [--gene_list my_genes.txt --target_outdir gene_list_results]
+        Author: Robert Backer
 """
 
 import pandas as pd
@@ -438,6 +439,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 
