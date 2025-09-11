@@ -27,7 +27,8 @@ Inputs:
 Outputs:
     - Annotated GFF3 (suffix: .annotated.gff3)
     - Annotated FASTA(s) (suffix: .annotated.fa)
-    Author: Robert Backer
+
+Author: Robert Backer
 """
 
 # === Annotation header block ===
@@ -227,5 +228,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
