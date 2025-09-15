@@ -4,7 +4,7 @@
 """
 NLR SV & SNV enrichment on pangene windows (WAVE-derived BED8s).
 
-Inputs (produced by your Snippet 7 bash):
+Inputs:
 - HAL_OUT/sv/bed/wave.sv50.bed8              (SV BED8; type in col7, len in col8)
 - HAL_OUT/pangene_loci.ref.bed6              (pangene locus spans on reference)
 - HAL_OUT/sv/chrom.sizes                     (chrom\tlength)
@@ -997,4 +997,5 @@ if __name__ == "__main__":
         sys.argv.remove("--replot")
         sys.exit(main_replot())
     else:
+
         sys.exit(main())
