@@ -41,7 +41,7 @@ def categorize_orthogroup(count, num_species):
         return 'Core'
     elif proportion >= 0.85: # Present in 85%-95% of species
         return 'Soft-core'
-    elif proportion >= 0.20: # Present in 20%-70% of species
+    elif proportion >= 0.20: # Present in 20%-84% of species
         return 'Shell'
     else:                   # Present in <20% of species
         return 'Cloud'
@@ -440,6 +440,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 
